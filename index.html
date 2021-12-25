@@ -115,47 +115,93 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><h4 id="基本概念："><a href="#基本概念：" class="headerlink" title="基本概念："></a>基本概念：</h4><p>构造函数：类似蓝图。是<code>function</code>.</p>
-<p>实例对象：用构造函数new出来的，类似通过蓝图制作的具体产品。是<code>object</code>.</p>
-<p>原型对象：是<code>object</code>.</p>
-<h4 id="关系："><a href="#关系：" class="headerlink" title="关系："></a>关系：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">构造函数.prototype -&gt; 原型对象</span><br><span class="line"></span><br><span class="line">原型对象.constructor -&gt; 构造函数</span><br><span class="line"></span><br><span class="line">实例对象.__ proto__ -&gt; 原型对象</span><br></pre></td></tr></table></figure>
+        <p>面向对象的思想在js的语法和应用中随处可见，这其中的原理就涉及到原型链和继承等有关知识</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/12/25/prototype/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://example.com/2021/12/25/prototype/" data-id="ckxl9nb1y0001mouwahfbhvpr" class="article-share-link">Share</a>
+      
 
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-原型和原型链问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2021-12-25T09:48:44.000Z" itemprop="datePublished">2021-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/">原型链和继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原型链</p>
+<p>基本概念：</p>
+<p>构造函数：类似蓝图。是function.</p>
+<p>实例对象：用构造函数new出来的，类似通过蓝图制作的具体产品。是object.</p>
+<p>原型对象：是object.</p>
+<p>它们的关系：</p>
+<p>构造函数.prototype -&gt; 原型对象</p>
+<p>原型对象.constructor -&gt; 构造函数</p>
+<p>实例对象.__ proto__ -&gt; 原型对象</p>
 <hr>
 <p>原型对象也是object，它也有__ proto__的属性，于是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">构造函数.prototype.__ proto__ -&gt; <span class="built_in">Object</span>.prototype</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>于是，原型链的模样如下：</p>
-<blockquote>
+<p>构造函数.prototype.__ proto__ -&gt; Object.prototype</p>
+<p>原型链：</p>
 <p>实例对象.__ proto__ -&gt; 原型对象</p>
 <p>原型对象.__ proto__ -&gt; Object.prototype</p>
 <p>Object.prototype.__ proto__ -&gt; null</p>
-</blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">实例.__ proto__.__ proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="继承："><a href="#继承：" class="headerlink" title="继承："></a>继承：</h3><h4 id="基本概念：-1"><a href="#基本概念：-1" class="headerlink" title="基本概念："></a>基本概念：</h4><p>子类：作为一个类，就是构造函数，作为将要继承方法的构造函数，是<code>fucntion</code></p>
-<p>父类：作为被继承方法的构造函数，是<code>function</code></p>
+<p>继承：</p>
+<p>基本概念：</p>
+<p>子类：作为一个类，其实就是构造函数，作为将要继承方法的构造函数，是fucntion</p>
+<p>父类：作为被继承方法的构造函数,是function</p>
 <p>原型的继承：子类可以访问到父类的属性和方法</p>
-<h4 id="具体操作："><a href="#具体操作：" class="headerlink" title="具体操作："></a>具体操作：</h4><p>让父类的属性和方法出现在子类实例的原型链上</p>
-<p>让子类的<code>prototype</code>属性指向父类的实例对象</p>
+<p>具体操作：</p>
+<p>让父类的属性和方法出现在子类实例的原型链上</p>
+<p>让子类的prototype属性指向父类的实例对象</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CHILD.prototype = <span class="keyword">new</span> PARENT()</span><br></pre></td></tr></table></figure>
 
 <p><img src="%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF.png"></p>
-<p>此时，子类的原型对象成了父类的一个实例对象，实例对象中不存在<code>constructor</code>属性，需要自己重定向到子类中。保持继承后原型链的完整。</p>
+<p>此时，子类的原型对象成了父类的一个实例对象，实例对象中不存在constructor属性，需要自己重定向到子类中。保持继承后原型链的完整。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CHILD.prototype.constructor = CHILD</span><br></pre></td></tr></table></figure>
 
 <p>之后，子类创建的实例对象就能通过新的原型链访问到父类的属性和方法了。</p>
-<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><ol>
-<li>不像其他语言中的继承一样（其他语言的继承一般是拷贝继承，也就是子类继承父类的时候，会把父类中的属性和方法拷贝一份到子类中，供子类实例调取使用），js中的继承是把父类的原型放到子类实例的原型链上，实例想调取这些方法，是基于<code>__ proto__</code>原型链查找机制完成的</li>
-<li>子类可以重写父类上的方法（会导致父类其他实例受到影响，但是一般不用）</li>
-<li>父类中私有的或者公有的属性和方法，最后都会变成子类中公有的属性和方法</li>
-</ol>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/25/prototype/" data-id="ckxl8api3000158uwavnvhqt5" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/" data-id="ckxl9nb270004mouw5tkndvgi" class="article-share-link">Share</a>
       
 
       
@@ -194,29 +240,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下</p>
-<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>需要在<code>soure</code>目录下新建<code>_images</code>文件夹，放入图片</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// source/_images/image.jpg</span></span><br><span class="line">![](<span class="regexp">/_images/im</span>age.jpg)</span><br></pre></td></tr></table></figure>
-
-<p>图片既可以在首页内容中访问到，也可以在文章正文中访问到。</p>
-<p><img src="/_images/image.jpg"></p>
-<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>图片除了可以放在统一的<code>_images</code>文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置<code>_config.yml</code>来生成。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//_config.yml</span></span><br><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//_posts/post_name/image.jpg</span></span><br><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
-
-<p>图片只能在文章中显示，但无法在首页中正常显示。</p>
-<p><img src="image.jpg"></p>
-<h3 id="在线引用"><a href="#在线引用" class="headerlink" title="在线引用"></a>在线引用</h3><p>在<a target="_blank" rel="noopener" href="https://sm.ms/">在线图床</a>上传自己的图片，然后将图片链接粘贴过来</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https:<span class="comment">//catswear.github.io/logo.png)</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://catswear.github.io/logo.png"></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2021/12/25/showPic/#more">......</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl8apj0000658uwctme7ffl" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl9nb240003mouw5gt8g69z" class="article-share-link">Share</a>
       
 
       
@@ -254,7 +287,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如果使用</p>
+        <p>在开发过程中npm版本的更新和定向更新可能导致npm和nodejs版本冲突，后续安装包的时候报错</p>
+<!--......-->
+
+<p>如果使用</p>
 <p><code>$ npm install npm</code> </p>
 <p>也会提示更新版本就需要别的方法</p>
 <p>方法：</p>
@@ -271,7 +307,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/24/nodejs_uninstall/" data-id="ckxl8aphr000058uw9acd806u" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/24/nodejs_uninstall/" data-id="ckxl9nb1r0000mouwgo0qhdzi" class="article-share-link">Share</a>
       
 
       

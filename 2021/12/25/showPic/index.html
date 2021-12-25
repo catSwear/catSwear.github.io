@@ -5,22 +5,22 @@
   
   <title>hexo博客中实现插入图片功能 | catswear的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下 本地引用绝对路径需要在soure目录下新建_images文件夹，放入图片 12&#x2F;&#x2F; source&#x2F;_images&#x2F;image.jpg![](&#x2F;_images&#x2F;image.jpg)  图片既可以在首页内容中访问到，也可以在文章正文中访问到。  相对路径图片除了可以放在统一的_images文件夹中，还可以放在文章自己的目录中。文章的目录可以通">
+  <meta name="description" content="在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo博客中实现插入图片功能">
 <meta property="og:url" content="http://example.com/2021/12/25/showPic/index.html">
 <meta property="og:site_name" content="catswear的博客">
-<meta property="og:description" content="在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下 本地引用绝对路径需要在soure目录下新建_images文件夹，放入图片 12&#x2F;&#x2F; source&#x2F;_images&#x2F;image.jpg![](&#x2F;_images&#x2F;image.jpg)  图片既可以在首页内容中访问到，也可以在文章正文中访问到。  相对路径图片除了可以放在统一的_images文件夹中，还可以放在文章自己的目录中。文章的目录可以通">
+<meta property="og:description" content="在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/_images/image.jpg">
+<meta property="og:image" content="http://example.com/images/image.jpg">
 <meta property="og:image" content="http://example.com/2021/12/25/showPic/image.jpg">
 <meta property="og:image" content="https://catswear.github.io/logo.png">
 <meta property="article:published_time" content="2021-12-25T02:17:23.000Z">
-<meta property="article:modified_time" content="2021-12-25T02:53:14.524Z">
+<meta property="article:modified_time" content="2021-12-25T03:28:34.091Z">
 <meta property="article:author" content="catswear">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/_images/image.jpg">
+<meta name="twitter:image" content="http://example.com/images/image.jpg">
   
   
   <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
@@ -121,12 +121,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下</p>
-<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>需要在<code>soure</code>目录下新建<code>_images</code>文件夹，放入图片</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// source/_images/image.jpg</span></span><br><span class="line">![](<span class="regexp">/_images/im</span>age.jpg)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>在<code>public </code>的<code>images</code>文件夹，放入图片</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// public/images/image.jpg</span></span><br><span class="line">![](<span class="regexp">/images/im</span>age.jpg)</span><br></pre></td></tr></table></figure>
 
 <p>图片既可以在首页内容中访问到，也可以在文章正文中访问到。</p>
-<p><img src="/_images/image.jpg"></p>
-<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>图片除了可以放在统一的<code>_images</code>文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置<code>_config.yml</code>来生成。</p>
+<p><img src="/images/image.jpg"></p>
+<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>图片除了可以放在统一的<code>images</code>文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置<code>_config.yml</code>来生成。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//_config.yml</span></span><br><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。</p>
@@ -143,7 +145,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl8apj0000658uwctme7ffl" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl9nb240003mouw5gt8g69z" class="article-share-link">Share</a>
       
 
       
@@ -155,7 +157,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/12/25/prototype/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
