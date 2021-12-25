@@ -125,83 +125,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/25/prototype/" data-id="ckxl9nb1y0001mouwahfbhvpr" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="post-原型和原型链问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2021-12-25T09:48:44.000Z" itemprop="datePublished">2021-12-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/">原型链和继承</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原型链</p>
-<p>基本概念：</p>
-<p>构造函数：类似蓝图。是function.</p>
-<p>实例对象：用构造函数new出来的，类似通过蓝图制作的具体产品。是object.</p>
-<p>原型对象：是object.</p>
-<p>它们的关系：</p>
-<p>构造函数.prototype -&gt; 原型对象</p>
-<p>原型对象.constructor -&gt; 构造函数</p>
-<p>实例对象.__ proto__ -&gt; 原型对象</p>
-<hr>
-<p>原型对象也是object，它也有__ proto__的属性，于是</p>
-<p>构造函数.prototype.__ proto__ -&gt; Object.prototype</p>
-<p>原型链：</p>
-<p>实例对象.__ proto__ -&gt; 原型对象</p>
-<p>原型对象.__ proto__ -&gt; Object.prototype</p>
-<p>Object.prototype.__ proto__ -&gt; null</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">实例.__ proto__.__ proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>继承：</p>
-<p>基本概念：</p>
-<p>子类：作为一个类，其实就是构造函数，作为将要继承方法的构造函数，是fucntion</p>
-<p>父类：作为被继承方法的构造函数,是function</p>
-<p>原型的继承：子类可以访问到父类的属性和方法</p>
-<p>具体操作：</p>
-<p>让父类的属性和方法出现在子类实例的原型链上</p>
-<p>让子类的prototype属性指向父类的实例对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CHILD.prototype = <span class="keyword">new</span> PARENT()</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF.png"></p>
-<p>此时，子类的原型对象成了父类的一个实例对象，实例对象中不存在constructor属性，需要自己重定向到子类中。保持继承后原型链的完整。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CHILD.prototype.constructor = CHILD</span><br></pre></td></tr></table></figure>
-
-<p>之后，子类创建的实例对象就能通过新的原型链访问到父类的属性和方法了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://example.com/2021/12/25/%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E9%97%AE%E9%A2%98/" data-id="ckxl9nb270004mouw5tkndvgi" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/25/prototype/" data-id="ckxl9zwq9000128uw2ocjah6g" class="article-share-link">Share</a>
       
 
       
@@ -249,7 +173,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl9nb240003mouw5gt8g69z" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl9zwqf000328uwfwxj0bqn" class="article-share-link">Share</a>
       
 
       
@@ -288,26 +212,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在开发过程中npm版本的更新和定向更新可能导致npm和nodejs版本冲突，后续安装包的时候报错</p>
-<!--......-->
-
-<p>如果使用</p>
-<p><code>$ npm install npm</code> </p>
-<p>也会提示更新版本就需要别的方法</p>
-<p>方法：</p>
-<p>卸载环境变量和所有npm的信息</p>
-<p>然后卸载nodejs 去官网下载最新版重新安装</p>
-<p>一、环境变量：</p>
-<p>1.用户环境变量和系统变量都要删除</p>
-<p><img src="/_images/image-20211224163835858.png"></p>
-<p>二、npm残留文件</p>
-<p><img src="/_images/image-20211224164022905.png"></p>
-<p>使用一段时间会出现npm和npm_cache两个文件夹。AppData是隐藏文件夹要显示出来，删掉之后。再卸载nodejs就卸载干净了</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2021/12/24/nodejs_uninstall/#more">......</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2021/12/24/nodejs_uninstall/" data-id="ckxl9nb1r0000mouwgo0qhdzi" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2021/12/24/nodejs_uninstall/" data-id="ckxl9zwpx000028uwb3afd0aa" class="article-share-link">Share</a>
       
 
       
