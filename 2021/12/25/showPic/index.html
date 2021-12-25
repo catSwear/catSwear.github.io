@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo博客中实现插入图片功能 | catswear的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下 本地引用绝对路径需要在soure目录下新建_images文件夹，放入图片 12&#x2F;&#x2F; source&#x2F;_images&#x2F;image.jpg![](&#x2F;_images&#x2F;image.jpg)  图片既可以在首页内容中访问到，也可以在文章正文中访问到。  相对路径图片除了可以放在统一的_images文件夹中，还可以放在文章自己的目录中。文章的目录可以通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客中实现插入图片功能">
+<meta property="og:url" content="http://example.com/2021/12/25/showPic/index.html">
+<meta property="og:site_name" content="catswear的博客">
+<meta property="og:description" content="在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下 本地引用绝对路径需要在soure目录下新建_images文件夹，放入图片 12&#x2F;&#x2F; source&#x2F;_images&#x2F;image.jpg![](&#x2F;_images&#x2F;image.jpg)  图片既可以在首页内容中访问到，也可以在文章正文中访问到。  相对路径图片除了可以放在统一的_images文件夹中，还可以放在文章自己的目录中。文章的目录可以通">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/_images/image.jpg">
+<meta property="og:image" content="http://example.com/2021/12/25/showPic/image.jpg">
+<meta property="og:image" content="https://catswear.github.io/logo.png">
+<meta property="article:published_time" content="2021-12-25T02:17:23.000Z">
+<meta property="article:modified_time" content="2021-12-25T02:53:14.524Z">
+<meta property="article:author" content="catswear">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/_images/image.jpg">
+  
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/scrollUp/image.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">catswear的博客</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">catswear的博客</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="example.com">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-showPic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/12/25/showPic/" class="article-date">
+  <time datetime="2021-12-25T02:17:23.000Z" itemprop="datePublished">2021-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo博客中实现插入图片功能
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在写博客的过程中，会有插入图片的需求，具体的方法和步骤如下</p>
+<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>需要在<code>soure</code>目录下新建<code>_images</code>文件夹，放入图片</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// source/_images/image.jpg</span></span><br><span class="line">![](<span class="regexp">/_images/im</span>age.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>图片既可以在首页内容中访问到，也可以在文章正文中访问到。</p>
+<p><img src="/_images/image.jpg"></p>
+<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>图片除了可以放在统一的<code>_images</code>文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置<code>_config.yml</code>来生成。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//_config.yml</span></span><br><span class="line"><span class="attr">post_asset_folder</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//_posts/post_name/image.jpg</span></span><br><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>图片只能在文章中显示，但无法在首页中正常显示。</p>
+<p><img src="image.jpg"></p>
+<h3 id="在线引用"><a href="#在线引用" class="headerlink" title="在线引用"></a>在线引用</h3><p>在<a target="_blank" rel="noopener" href="https://sm.ms/">在线图床</a>上传自己的图片，然后将图片链接粘贴过来</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https:<span class="comment">//catswear.github.io/logo.png)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://catswear.github.io/logo.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://example.com/2021/12/25/showPic/" data-id="ckxl8apj0000658uwctme7ffl" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/12/25/prototype/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          原型链和继承
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/24/nodejs_uninstall/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何处理npm与nodejs版本冲突</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 catswear<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+
+
+<script src="/js/jquery.transform.js"></script>
+
+
+<script src="/js/menu.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/scrollUp.js"></script>
+
+
+  </div>
+</body>
+</html>
