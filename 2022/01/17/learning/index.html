@@ -5,17 +5,17 @@
   
   <title>web开发基础知识 | catswear的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="包含DNS、HTTP和浏览器工作原理的有关知识">
+  <meta name="description" content="包含DNS、HTTP和浏览器工作原理的有关知识…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web开发基础知识">
 <meta property="og:url" content="http://example.com/2022/01/17/learning/index.html">
 <meta property="og:site_name" content="catswear的博客">
-<meta property="og:description" content="包含DNS、HTTP和浏览器工作原理的有关知识">
+<meta property="og:description" content="包含DNS、HTTP和浏览器工作原理的有关知识…">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/01/17/learning/DNS.png">
 <meta property="og:image" content="http://example.com/2022/01/17/learning/req&res.png">
 <meta property="article:published_time" content="2022-01-17T02:35:04.000Z">
-<meta property="article:modified_time" content="2022-01-17T02:42:39.712Z">
+<meta property="article:modified_time" content="2022-01-17T02:53:47.609Z">
 <meta property="article:author" content="catswear">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
@@ -58,6 +58,8 @@
           
             <a class="main-nav-link" href="/">首页</a>
           
+            <a class="main-nav-link" href="/archives">归档</a>
+          
         
       -->
     </nav>
@@ -92,6 +94,8 @@
       
         <li><a href="/">首页</a></li>
       
+        <li><a href="/archives">归档</a></li>
+      
       
     </ul>
   </div>
@@ -119,29 +123,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>包含DNS、HTTP和浏览器工作原理的有关知识</p>
+        <p>包含DNS、HTTP和浏览器工作原理的有关知识…</p>
 <span id="more"></span>
 
-<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><h4 id="一、DNS服务器"><a href="#一、DNS服务器" class="headerlink" title="一、DNS服务器"></a>一、DNS服务器</h4><p>电脑上记录着类似电话本的数据，域名和IP地址一一对应，类似与姓名和手机号，手机号不好记，但是姓名好记。</p>
-<p>这个文件就是hosts文件</p>
-<p>当我们输入网站的域名比如 <a target="_blank" rel="noopener" href="http://www.baidu.com时,系统无法通过域名直接访问,而是在电脑中查找hosts文件,找到其对应的ip地址,电脑去访问这个ip而不是域名./">www.baidu.com时，系统无法通过域名直接访问，而是在电脑中查找hosts文件，找到其对应的ip地址，电脑去访问这个ip而不是域名。</a></p>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><h4 id="一、DNS服务器"><a href="#一、DNS服务器" class="headerlink" title="一、DNS服务器"></a>一、DNS服务器</h4><p>电脑上记录着类似电话本的数据，域名和IP地址一一对应，类似于姓名和手机号，手机号不好记，但是姓名好记。</p>
+<p>记录这些数据的文件就是hosts文件。</p>
+<p>当我们输入网站的域名比如 <a target="_blank" rel="noopener" href="http://www.baidu.com时,系统无法通过域名直接访问到网站,而是先在电脑中查找hosts文件,找到其对应的ip地址,电脑去访问这个ip而不是域名./">www.baidu.com时，系统无法通过域名直接访问到网站，而是先在电脑中查找hosts文件，找到其对应的ip地址，电脑去访问这个ip而不是域名。</a></p>
 <p>但是电脑上存储的host文件是有限的，不可能保存全世界所有域名和ip，于是有服务器专门用来存放这些数据。</p>
 <p>电脑访问服务器，获得域名对应的ip，然后根据ip去访问网站，这个服务器就是DNS服务器。</p>
 <p><img src="DNS.png"></p>
 <h4 id="二、域名劫持和污染"><a href="#二、域名劫持和污染" class="headerlink" title="二、域名劫持和污染"></a>二、域名劫持和污染</h4><p>我们的电脑在访问DNS服务器时，因为别人非法的操作导致我们获得了错误的ip，这样就访问到别的网站了。如果这种网站如果是原网站的克隆网站，就可以完成盗号等操作。</p>
 <hr>
 <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><h4 id="一、协议"><a href="#一、协议" class="headerlink" title="一、协议"></a>一、协议</h4><p>http的核心就是一个协议（protocal），是什么之间的协议呢？</p>
-<p>http是客户端和服务端之间进行网络通信的协议，</p>
-<p>客户端是主动型，发送请求报文；服务端是被动型，收到请求报文之后就发送响应报文</p>
+<p>http是客户端和服务端之间进行网络通信的协议。</p>
+<p>客户端是主动型，发送请求报文；服务端是被动型，收到请求报文之后就发送响应报文。</p>
 <h4 id="二、请求报文和响应报文"><a href="#二、请求报文和响应报文" class="headerlink" title="二、请求报文和响应报文"></a>二、请求报文和响应报文</h4><p>http规定了请求报文和响应报文的格式。</p>
-<p>请求报文中，包含：方法，URL，http版本，请求首部</p>
-<p>响应报文中，包含：http版本，状态码，原因短语，响应首部，然后是资源</p>
+<p>请求报文中，包含：方法，URL，http版本，请求首部；</p>
+<p>响应报文中，包含：http版本，状态码，原因短语，响应首部，然后是资源。</p>
 <p><img src="req&res.png"></p>
 <ol>
 <li>方法：</li>
 </ol>
 <p>GET,POST</p>
-<p>GET是一种获取的方法，POST偏向于传输和提交数据的方法</p>
+<p>GET是一种获取的方法，POST偏向于传输和提交数据的方法。</p>
 <ol start="2">
 <li>状态码：</li>
 </ol>
@@ -153,37 +157,37 @@
 <li>响应首部：</li>
 </ol>
 <p>content-type: 内容类型，服务器会返回不同类型的数据，有了首部显示文件类型浏览器就能更清楚如何去处理这些不同类型的数据。</p>
-<h4 id="三、应用层"><a href="#三、应用层" class="headerlink" title="三、应用层"></a>三、应用层</h4><p>把网络通信按照TCP/IP模型划分，从上到下分为应用层、传输层、网际层和网络接口层</p>
-<p>传输层协议用来配合定义传输数据的方式，有TCP和UDP</p>
-<p>http是应用层协议，TCP是传输层协议</p>
+<h4 id="三、应用层"><a href="#三、应用层" class="headerlink" title="三、应用层"></a>三、应用层</h4><p>把网络通信按照TCP/IP模型划分，从上到下分为应用层、传输层、网际层和网络接口层；</p>
+<p>传输层协议用来配合定义传输数据的方式，有TCP和UDP；</p>
+<p>http是应用层协议，TCP是传输层协议；</p>
 <p>TCP有三次握手机制，比较可靠。</p>
 <h4 id="四、非持久和持久连接"><a href="#四、非持久和持久连接" class="headerlink" title="四、非持久和持久连接"></a>四、非持久和持久连接</h4><p>每个请求报文只能写一个url，即只能请求一个资源路径。随着互联网的发展，一次一个请求的方式很难满足实际需求，而且每次都要进行一次TCP连接。因此在http 1.1中，默认连接为持久连接，服务端返回消息之后不会关闭连接，客户端可以继续发送下一个请求，知道没有要请求的了，客户端发送connection: close 首部给服务端，这样服务端就关闭了。</p>
 <h4 id="五、无状态和状态管理"><a href="#五、无状态和状态管理" class="headerlink" title="五、无状态和状态管理"></a>五、无状态和状态管理</h4><p>如果互联网每一台主机都来访问服务器，而服务器要把它们每一个的状态都记录下来，会崩溃。所以服务器不会把每个客户端的信息都记录下来，这就是服务器的<strong>无状态</strong>。</p>
-<p>但是目前很多网站都有用户登录功能，如果是无状态，访问一次第二次又要重新登陆，为了保存用户状态就有了cookie技术，这项技术需要在首部字段加上cookie信息，这样就能保持登录状态。</p>
+<p>但是目前很多网站都有用户登录功能，如果是无状态，访问一次之后第二次又要重新登陆，为了保存用户状态就有了cookie技术，这项技术需要在首部字段加上cookie信息，这样就能保持登录状态。</p>
 <hr>
-<h3 id="浏览器的工作原理"><a href="#浏览器的工作原理" class="headerlink" title="浏览器的工作原理"></a>浏览器的工作原理</h3><p>从输入一个域名url到页面加载完成的所有步骤</p>
+<h3 id="浏览器的工作原理"><a href="#浏览器的工作原理" class="headerlink" title="浏览器的工作原理"></a>浏览器的工作原理</h3><p>包括从输入一个域名url到页面加载完成的所有步骤：</p>
 <h4 id="一、获取html代码"><a href="#一、获取html代码" class="headerlink" title="一、获取html代码"></a>一、获取html代码</h4><ol>
-<li><p>浏览器根据url在DNS服务器上找到域名对应的网站ip，通过ip找到提供网站内容的服务器。</p>
+<li><p>浏览器根据url在DNS服务器上找到域名对应的网站ip，通过ip找到提供网站内容的服务器；</p>
 </li>
-<li><p>浏览器和服务器建立连接的过程：通过TCP协议，三次握手，现在https协议会增加TLS握手，建立加密的隧道，保证数据传输不被监听和篡改</p>
+<li><p>浏览器和服务器建立连接的过程：通过TCP协议，三次握手，现在https协议会增加TLS握手，建立加密的隧道，保证数据传输不被监听和篡改；</p>
 </li>
-<li><p>浏览器和服务器之间建立连接，浏览器发送request请求数据，服务器给他html代码，会先给14kb，然后浏览器慢慢下载其他文件。</p>
+<li><p>浏览器和服务器之间建立连接，浏览器发送request请求数据，服务器给他html代码，会先给14kb，然后浏览器慢慢下载其他文件；</p>
 </li>
 <li><p>收到html代码之后，浏览器开始渲染网页。</p>
 </li>
 </ol>
-<h4 id="二、浏览器工作过程"><a href="#二、浏览器工作过程" class="headerlink" title="二、浏览器工作过程"></a>二、浏览器工作过程</h4><p>   4.1 <strong>构建DOM树</strong> ：DOM树是html文档在浏览器中的对象表示，浏览器解析html的时候是顺序执行的，只有一个主线程，碰到script标签就加载js文件并执行里面的代码，执行完成之后再继续。如果碰到图片和css文件、async或者defer标签，它们不会影响主线程，而是异步加载。此外，浏览器有一个预扫描线程，提前把css文件、字体、js下载下来，也是异步的，不会影响主线程</p>
+<h4 id="二、浏览器工作过程"><a href="#二、浏览器工作过程" class="headerlink" title="二、浏览器工作过程"></a>二、浏览器工作过程</h4><p>   4.1 <strong>构建DOM树</strong> ：DOM树是html文档在浏览器中的对象表示，浏览器解析html的时候是顺序执行的，只有一个主线程，碰到script标签就加载js文件并执行里面的代码，执行完成之后再继续。如果碰到图片和css文件、<code>async</code>或者<code>defer</code>标签，它们不会影响主线程，而是异步加载。此外，浏览器有一个预扫描线程，提前把css文件、字体、js下载下来，也是异步的，不会影响主线程。</p>
 <p>   4.2 <strong>构建CSSOM树</strong>： CSSOM树是css在浏览器中的对象表示。</p>
 <p>   4,3 <strong>合并DOM和CSSOM树</strong>：浏览器会从DOM的根节点开始，合并CSSOM中的样式到DOM中的每个节点，形成一棵渲染树。</p>
 <p>   4.4 <strong>布局</strong> ：形成渲染树之后，浏览器会根据样式计算每一个可见节点（未设置dispaly为none的节点）的宽高和位置等，对所有节点进行布局规划，对于图片这样的节点，如果没有指定宽高，那浏览器会先忽略它的大小，在图片加载完成之后，根据图片的宽高和位置再次计算受影响的节点的大小和位置，这个过程叫做回流（reflow）。</p>
-<p>   5.5 <strong>绘制</strong> ：在第一次布局完成之后，浏览器会真正把节点和节点的样式绘制到屏幕上，这个过程要快速，否则会影响动画和交互的效果，如果之前的布局发生了回流，浏览器还会重绘，把变化的布局重新绘制到页面上。在绘制期间也可能会有组合发生，因为在渲染节点时可能会产生新的图层，例如<video/>标签，或者设置了opacity, will-change, transform等属性的节点，浏览器需要把这些节点按正确的顺序组合起来，堆叠，回流和重绘操作也会重新引发组合操作。</p>
-<p>   上面5步完成之后，设置了defer async的js文件开始加载并执行。用户就可以和浏览器正常的交互了。</p>
+<p>   5.5 <strong>绘制</strong> ：在第一次布局完成之后，浏览器会真正把节点和节点的样式绘制到屏幕上，这个过程要快速，否则会影响动画和交互的效果，如果之前的布局发生了回流，浏览器还会重绘，把变化的布局重新绘制到页面上。在绘制期间也可能会有组合发生，因为在渲染节点时可能会产生新的图层，例如<code>&lt;video/&gt;</code>标签，或者设置了<code>opacity</code>, <code>will-change</code>, <code>transform</code>等属性的节点，浏览器需要把这些节点按正确的顺序组合起来，堆叠，回流和重绘操作也会重新引发组合操作。</p>
+<p>   上面5步完成之后，设置了<code>defer</code> <code>async</code>的js文件开始加载并执行。用户就可以和浏览器正常的交互了。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://example.com/2022/01/17/learning/" data-id="ckyi31djs00019cuwc2kc0m8m" class="article-share-link">Share</a>
+        <a data-url="http://example.com/2022/01/17/learning/" data-id="ckyi3pexj0000a0uw5fy66trk" class="article-share-link">Share</a>
       
 
       
@@ -223,6 +227,8 @@
       <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
   
 </nav>
     -->
